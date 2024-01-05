@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GPA CALCULATOR</title>
+<link rel="stylesheet"href="css/gpa.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="header-limiter">
+
+      <div>
+        <img src="images/DC_logo_circle.png" class="img">
+      </div>
+
+      <h1>&nbsp;Disney<span>College</span></h1>
+
+      <nav>
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gpa.html">GPA</a></li>
+            <li><a href="cgpa.html">CGPA</a></li>
+            <li><a href="Grade.html">Grade</a></li>
+            <li><a href="#">Guide <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <ul>
+                <li><a href="guideGPA.html">Guide GPA</a></li>
+                <li><a href="guideCGPA.html">Guide CGPA</a></li>
+              </ul>
+            </li>
+            <li><a href="About_Us.html">About Us</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="container">
+    <h1 id="logo"> GPA CALCULATOR </h1><br>
+      
+      <input type ="number" disabled placeholder="0.00" id="gp_container" value="0"><br><br>
+      <span class="title1">Course</span> <span class="title2">Credit Hour</span> <span class="title3">Grade</span><br><br>
+    
+      <input type="text" id="course_code" placeholder="Add course">
+      <div id="inline_container">
+        <input type="text" id="credit" placeholder="Credit Hour">
+        
+        <select name="grade" id="grade">
+          <option value="SELECT">SELECT</option>
+          <option value="A+">A+</option>
+          <option value="A">A</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B">B</option>
+          <option value="B-">B-</option>
+          <option value="C+">C+</option>
+          <option value="C">C</option>
+          <option value="C-">C-</option>
+          <option value="D+">D+</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+        </select>
+      
+        <br>
+        <p id="total_credits">0</p>
+        <span id="total_points">0</span>
+        
+        <br><br>
+        <button id="add_btn"> Add course </button><br><br>
+      </div>
+      <br>
+      
+      <div id="header" class="output output-warning display-none" >
+        <h2 id="added_courses_header"> ADDED COURSES</h2><br>
+        <span class="title4">Course</span> <span class="title5">Credit Hour</span> <span class="title6">Grade</span><br><br>
+      </div>
+      
+      <div id="added_courses"></div>
+      <input id="clear_btn" class="btn btn-warning display-none" type="button" value="Clear"><br><br>
+  </div>
+
+  <footer>
+
+    <div class="container__footer">
+      
+        <div class="box__footer1">
+          <div class="logo">
+           <img src="images/DC_logo.png" class="img" alt="">
+          </div>
+          
+            <div class="terms">
+              <h3>Disney College (DC)</h3>
+              <p>1313 Harbor Blvd. Anaheim, CA 92803</p>
+              <p>Tel: +60 11368 93973</p>
+              <p>Email: disneycollege.edu@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="box__footer">
+            <h2>Our Service</h2>
+            <a href="gpa.html">GPA</a>
+            <a href="cgpa.html">CGPA</a>
+            <a href="Grade.html">Grade</a>
+            <a href="guideGPA.html">Guide GPA</a>
+            <a href="guideCGPA.html">Guide CGPA</a>
+            <a href="About_Us.html">About Us</a>
+        </div>
+
+        <div class="box__footer">
+            <h2>Follow Us</h2>
+            <a href="https://twitter.com/DisneyCollege2"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+            <a href="https://www.instagram.com/dcollege2022/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.youtube.com/channel/UCpkNuBzA0sSV_siapzfoa8A"><i class="fa fa-youtube-square" aria-hidden="true"></i> Youtube</a>
+        </div>
+
+    </div>
+
+    <div class="box__copyright">
+        <hr>
+        <p><span class="icon"> COPYRIGHT <i class="fa fa-copyright" aria-hidden="true"></i></span> DISNEY COLLEGE 2022.</p>
+    </div>
+</footer>
+  
+  <script type="text/javascript">
+    
+    //Variable Declarations 
+    var added_courses = document.getElementById("added_courses");
+    var header = document.getElementById("header");
+
+    const color1 = ['#062A77'];            // the color choices
+    var color1Index = 0;               // the index of the current color
+
+    const color2 = ['#343F66'];            // the color choices
+    var color2Index = 0;                  // the index of the current color
+
+    const color3 = ['#625355'];            // the color choices
+    var color3Index = 0;                  // the index of the current color
+
+    const color4 = ['#916844'];            // the color choices
+    var color4Index = 0;                  // the index of the current color
+
+    const color5 = ['#BF7C33'];            // the color choices
+    var color5Index = 0;                  // the index of the current color
+
+    const color6 = ['#ED9122'];            // the color choices
+    var color6Index = 0;                  // the index of the current color
+
+    const color7 = ['#FF8B00'];            // the color choices
+    var color7Index = 0;                  // the index of the current color
+
+    const resetColor = ['lightgrey'];
+    var resetColorIndex =0;
+
+    const fontColor = ['#FFF0F5'];
+    var fontColorIndex = 0;
+
+
+    const AddNewCourse = () =>
+    {
+      var course_code = document.getElementById("course_code");
+      var credit  = document.getElementById("credit");
+      var grade = document.getElementById("grade");
+      var inline_container = document.getElementById("inline_container");
+      var cal_btn = document.getElementById("cal_btn");
+      var gp_container = document.getElementById("gp_container");
+      var add_btn = document.getElementById("add_btn");
+      var added_courses = document.getElementById("added_courses");
+      
+      var new_course = document.createElement("div");
+      var new_course_code = document.createElement("span");
+      var new_credit = document.createElement("span");
+      var new_grade = document.createElement("span");
+      var p = document.createElement("span");
+      var br = document.createElement("br");
+      
+      new_course.setAttribute("id","new_course");
+      new_course_code.setAttribute("id","new_course_code");
+      new_credit.setAttribute("id","new_credit");
+      new_grade.setAttribute("id","new_grade");
+      p.setAttribute("id","p");
+      
+      new_course_code.innerHTML = course_code.value;
+      new_credit.innerHTML = credit.value;
+      new_grade.innerHTML = grade.value;
+      p.innerHTML = "×";
+      new_course.appendChild(new_course_code);
+      new_course.appendChild(new_credit);
+      new_course.appendChild(new_grade);
+      
+      added_courses.appendChild(new_course);
+      added_courses.appendChild(br);
+      alert(new_course_code.innerHTML + " " + "has been added successfully");
+
+      // CalculateGPA function
+      var course_code = document.getElementById("course_code");
+      var credit  = document.getElementById("credit");
+      var grade = document.getElementById("grade");
+      var inline_container = document.getElementById("inline_container");
+      var add_btn = document.getElementById("add_btn");
+      var course = document.getElementById("course");
+      var cal_btn = document.getElementById("cal_btn");
+      var gp_container = document.getElementById("gp_container");
+      
+      
+      var grade_value = 0;
+      
+      if(grade.value == "A+")
+      {
+        grade_value = 4.00;
+      }
+      
+      else if(grade.value == "A")
+      {
+        grade_value = 4.00;
+      }
+      
+      else if(grade.value == "A-")
+      {
+        grade_value = 3.67;
+      }
+      
+      else if(grade.value == "B+")
+      {
+        grade_value = 3.33;
+      }
+      
+      else if(grade.value == "B")
+      {
+        grade_value = 3.00;
+      }
+      
+      else if(grade.value == "B-")
+      {
+        grade_value = 2.67;
+      }
+      
+      else if(grade.value == "C+")
+      {
+        grade_value = 2.33;
+      }
+      
+      else if(grade.value == "C")
+      {
+        grade_value = 2.00;
+      }
+      
+      else if(grade.value == "C-")
+      {
+        grade_value = 1.67;
+      }
+      
+      else if(grade.value == "D+")
+      {
+        grade_value = 1.33;
+      }
+      
+      else if(grade.value == "D")
+      {
+        grade_value = 1.00;
+      }
+      
+      else if(grade.value == "E")
+      {
+        grade_value = 0.67;
+      }
+      
+      else if(grade.value == "F")
+      {
+        grade_value = 0.00;
+      }
+      
+      var a = document.getElementById("total_credits");
+      var b = document.getElementById("total_points");
+      
+      var total_u = a.innerHTML;
+      var total_p = b.innerHTML;
+      
+      var credits = credit.value;
+      var points = grade_value*credits;
+      
+      total_credits = parseFloat(total_u,10) + parseFloat(credits,10);
+      total_points = parseFloat(total_p,10) + points;
+      
+      var GPA = total_points/total_credits;
+      GPA = (Math.round(GPA * 100) / 100).toFixed(2);
+      gp_container.value = GPA;
+
+      if (gp_container.value >= '3.50' && gp_container.value <= '4.00')
+      {
+        gp_container.style.backgroundColor = color1[color1Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';
+                              // set some transition, so it looks better                       // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      else if (gp_container.value >= '3.00' && gp_container.value <= '3.49')
+      {
+        gp_container.style.backgroundColor = color2[color2Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better
+                      // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      else if (gp_container.value >= '2.50' && gp_container.value <= '2.99')
+      {
+        gp_container.style.backgroundColor = color3[color3Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better                       // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      else if (gp_container.value >= '2.00' && gp_container.value <= '2.49')
+      {
+        gp_container.style.backgroundColor = color4[color4Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better
+                      // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator
+      } 
+
+      else if (gp_container.value >= '1.50' && gp_container.value <= '1.99')
+      {
+        gp_container.style.backgroundColor = color5[color5Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better                      // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      else if (gp_container.value >= '1.00' && gp_container.value <= '1.49')
+      {
+        gp_container.style.backgroundColor = color6[color6Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better                       // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      else if (gp_container.value >= '0.00' && gp_container.value <= '1.00')
+      {
+        gp_container.style.backgroundColor = color7[color7Index];   // set the color of text to the current color
+        gp_container.style.transition = '0.3s';                           // set some transition, so it looks better                       // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+      } 
+
+      gp_container.style.color = fontColor[fontColorIndex];
+      gp_container.style.transition = '0.3s';
+
+      a.innerHTML = total_credits;
+      b.innerHTML = total_points;
+
+      course_code.value = "";
+      credit.value = "";
+      grade.value ="SELECT";
+
+      header.classList.remove("display-none");
+      clear_btn.classList.remove("display-none");
+    }
+
+    const Clear = () =>
+    {
+      var course_code = document.getElementById("course_code");
+      var credit  = document.getElementById("credit");
+      var grade = document.getElementById("grade");
+      var inline_container = document.getElementById("inline_container");
+      var cal_btn = document.getElementById("cal_btn");
+      var gp_container = document.getElementById("gp_container");
+      var add_btn = document.getElementById("add_btn");
+      var added_courses = document.getElementById("added_courses");
+      
+      var new_course = document.createElement("div");
+      var new_course_code = document.createElement("span");
+      var new_credit = document.createElement("span");
+      var new_grade = document.createElement("span");
+      var p = document.createElement("span");
+      var br = document.createElement("br");
+
+      var a = document.getElementById("total_credits");
+      var b = document.getElementById("total_points");
+
+      added_courses.querySelectorAll("*").forEach((child) => child.remove()); 
+     
+      gp_container.value = "0";
+      a.innerHTML = "0";
+      b.innerHTML = "0";
+
+      course_code.value = "";
+      credit.value = "";
+      grade.value ="SELECT";
+      gp_container.style.backgroundColor = resetColor[resetColorIndex];
+
+      header.classList.add("display-none");
+      clear_btn.classList.add("display-none");
+    }
+    
+    add_btn.addEventListener("click",AddNewCourse);
+    clear_btn.addEventListener("click", Clear);
+    
+  </script>
+</body>
+</html>

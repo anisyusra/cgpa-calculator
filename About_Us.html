@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/About_Us.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="header-limiter">
+    
+          <div>
+            <img src="images/DC_logo_circle.png" class="img">
+          </div>
+    
+          <h1>&nbsp;Disney<span>College</span></h1>
+    
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gpa.html">GPA</a></li>
+              <li><a href="cgpa.html">CGPA</a></li>
+              <li><a href="Grade.html">Grade</a></li>
+              <li><a href="#">Guide <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                <ul>
+                  <li><a href="guideGPA.html">Guide GPA</a></li>
+                  <li><a href="guideCGPA.html">Guide CGPA</a></li>
+                </ul>
+              </li>
+              <li><a href="About_Us.html">About Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+    <div class="main">
+        <div class="main-kgn">
+          <div id="slider">
+            <ul id="slideWrap">
+              <li><img src="images/DC_logo_resize.png" alt=""></li>
+              <li><img src="images/bg1.jpg" alt=""></li>
+              <li><img src="images/bg2.jpg" alt=""></li>
+              <li><img src="images/bg3.png" alt=""></li>
+            </ul>
+            <a id="prev" href="#">&#8810;</a>
+            <a id="next" href="#">&#8811;</a>
+          </div>
+          <script>
+            var responsiveSlider = function() {
+          
+          var slider = document.getElementById("slider");
+          var sliderWidth = slider.offsetWidth;
+          var slideList = document.getElementById("slideWrap");
+          var count = 1;
+          var items = slideList.querySelectorAll("li").length;
+          var prev = document.getElementById("prev");
+          var next = document.getElementById("next");
+          
+          window.addEventListener('resize', function() {
+          sliderWidth = slider.offsetWidth;
+          });
+          
+          var prevSlide = function() {
+          if(count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          }
+          else if(count = 1) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          }
+          };
+          
+          var nextSlide = function() {
+          if(count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+          }
+          else if(count = items) {
+            slideList.style.left = "0px";
+            count = 1;
+          }
+          };
+          
+          next.addEventListener("click", function() {
+          nextSlide();
+          });
+          
+          prev.addEventListener("click", function() {
+          prevSlide();
+          });
+          
+          setInterval(function() {
+          nextSlide()
+          }, 5000);
+          
+          };
+          
+          window.onload = function() {
+          responsiveSlider();  
+          }
+          </script>
+        <div class="main-text">
+            <h2>About us</h2>
+            <h5>GPA & CGPA calculator</h5>
+            <p> We are a group of IT professionals enthusiastic in developing quality tools and content for Disney college.
+                The main purpose of this website is to provide a comprehensive collection of free online calculators for
+                ease of public use. This website is created for public especially for our student so we hope this website 
+                is a lot of help to the others.
+            </p>       
+        </div>
+        </div>
+        </div>
+    </div>
+
+<!-- Teams -->
+    <div class="team_profile">
+      <div class="text">
+          <h1>Our Team</h1>
+          <p>Our team consist of four member from IT group section and 
+            the team has been formed since year 2018. We are professional in 
+            creating content and tools on the internet.
+      </div>
+      <div class="profile-card">
+          <div class="img">
+              <img src="images/asma.jpg">
+          </div>
+          <div class="caption">
+              <h3>Asma' Shahirah</h3>
+              <p>Web Designer<p>
+              <h5>+612 - 3456789</h5>
+              <div class="social-links">
+                  <a href="https://www.facebook.com/ayra.miyu"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/yunara07/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/AsmaYusri"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="profile-card">
+          <div class="img">
+              <img src="images/wafi.jpg">
+          </div>
+          <div class="caption">
+              <h3>Wafiqah Hasya</h3>
+              <p>Senior App Developer</p>
+              <h5>+619 - 8765432</h5>
+              <div class="social-links">
+                  <a href="https://www.facebook.com/profile.php?id=100036812208271"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/wafiqhsya/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/wafiqhsya"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="profile-card">
+          <div class="img">
+              <img src="images/yusra.jpg">
+          </div>
+          <div class="caption">
+              <h3>Anis Yusra</h3>
+              <p>Front End Developer</p>
+              <h5>+611 - 4665432</h5>
+              <div class="social-links">
+                  <a href="https://www.facebook.com/ainur.yasmin.31"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/ainuryusoff/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/ayie_09"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="profile-card">
+          <div class="img">
+              <img src="images/alwani.jpg">
+          </div>
+          <div class="caption">
+              <h3>Alwani Wajihah</h3>
+              <p>Web Developer</p>
+              <h5>+615 - 8735443</h5>
+              <div class="social-links">
+                  <a href="https://www.facebook.com/nuralwani.wajihah.3"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/alwani_wajihah/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/AlwaniWajihah"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+    </div>
+<!-- Teams -->
+
+<!-- Feedback -->
+
+<div class="container">
+
+  <h2>Any Feedback?</h2>
+  <h4 style="font-family: 'Roboto Condensed', sans-serif; color:#1f1f1f;margin-top:10px;">Please fill out the quick
+    form and
+    we will be in
+    touch with
+    lightening speed.</h4>
+
+  <hr style="color:#1f1f1f;"></br>
+
+
+
+  <form id="myform" onsubmit="return submitHandle()" method="POST">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fullname" style="font-family: 'Muli', sans-serif; color:#1f1f1f;">Full Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" style="font-family: 'Muli', sans-serif;" id="fullname" onfocus="this.value=''"
+          name="fullName" placeholder="Enter Full Name" required>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="emailid" style="font-family: 'Muli', sans-serif; color:#1f1f1f;">Email:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="emailid" style="font-family: 'Muli', sans-serif;" onfocus="this.value=''"
+          name="emailid" placeholder="Enter Email" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="cno" style="font-family: 'Muli', sans-serif; color:#1f1f1f;">Contact Number:</label>
+      </div>
+      <div class="col-75">
+        <input type="number" style="font-family: 'Muli', sans-serif;" onfocus="this.value=''" id="cno" name="cno"
+          placeholder="+06" required
+          style="width:425px;height: 40px; border-radius: 4px; padding:12px; border: 1px solid #ccc;display: inline-block;resize: vertical;">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="issue" style="font-family: 'Muli', sans-serif; color:#1f1f1f;">Select Issue:</label>
+      </div>
+      <div class="col-75">
+        <select id="issue" name="issue" required>
+          <option value="" disabled selected hidden>--Select--</option>
+          <option value="Author Related">Author Related</option>
+          <option value="Publisher Related">Publisher Related</option>
+          <option value="Business Related">Calculator Related</option>
+          <option value="Feedback/Suggestion">Feedback/Suggestion</option>
+          <option value="Any Other">Any Other</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="subject" style="font-family: 'Muli', sans-serif; color:#1f1f1f;">Description:</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="margin-left: 100px;">
+
+        <button class="button" id="myBtn" type="submit" onclick="verifySubmit()" value="submit" form="myform"
+          style="vertical-align:middle"><span style="font-family: 'Raleway', sans-serif;">SUBMIT</span></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <button class="button" type="button" onclick="resetHandle()"
+          style="background-color: orange; vertical-align:middle"><span
+            style="font-family: 'Raleway', sans-serif;">RESET</span></button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  function submitHandle() {
+
+let obj = {
+
+    fullName: document.getElementById("fullname").value,
+    emailID: document.getElementById("emailid").value,
+    cno: document.getElementById("cno").value,
+    issue: document.getElementById("issue").value,
+    subject: document.getElementById("subject").value,
+
+}
+
+let jsonObj = JSON.stringify(obj);
+console.log(jsonObj);
+
+// document.getElementById("myform").reset(); 
+
+alert("Form Submitted Successfully");
+
+}
+
+function resetHandle() {
+    document.getElementById("myform").reset()
+}
+</script>
+
+<!-- Feedback -->
+
+<!-- footer -->
+<footer>
+
+    <div class="container__footer">
+      
+        <div class="box__footer1">
+          <div class="logo">
+           <img src="images/DC_logo.png" class="img" alt="">
+          </div>
+          
+            <div class="terms">
+              <h3>Disney College (DC)</h3>
+              <p>1313 Harbor Blvd. Anaheim, CA 92803</p>
+              <p>Tel: +60 11368 93973</p>
+              <p>Email: disneycollege.edu@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="box__footer">
+            <h2>Our Service</h2>
+            <a href="gpa.html">GPA</a>
+            <a href="cgpa.html">CGPA</a>
+            <a href="Grade.html">Grade</a>
+            <a href="guideGPA.html">Guide GPA</a>
+            <a href="guideCGPA.html">Guide CGPA</a>
+            <a href="About_Us.html">About Us</a>
+        </div>
+
+        <div class="box__footer">
+            <h2>Follow Us</h2>
+            <a href="https://twitter.com/DisneyCollege2"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+            <a href="https://www.instagram.com/dcollege2022/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.youtube.com/channel/UCpkNuBzA0sSV_siapzfoa8A"><i class="fa fa-youtube-square" aria-hidden="true"></i> Youtube</a>
+        </div>
+
+    </div>
+
+    <div class="box__copyright">
+        <hr>
+        <p><span class="icon"> COPYRIGHT <i class="fa fa-copyright" aria-hidden="true"></i></span> DISNEY COLLEGE 2022.</p>
+    </div>
+</footer>
+<!-- footer -->   
+</body>
+
+</html>
